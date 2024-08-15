@@ -1,0 +1,445 @@
+/*==================== GOOGLE FONTS ====================*/
+/*==================== Title Font ====================*/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Great+Vibes&family=Ubuntu:wght@300&display=swap');
+
+/*==================== Sub-Title Font ====================*/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Great+Vibes&family=Ubuntu:wght@300&display=swap');
+
+/* @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap'); */
+/*==================== VARIABLES CSS ====================*/
+:root {
+  /*========== Colors ==========*/
+  --first-color: #f4a01b;
+  --first-color-second: #ec0752;
+  --Get-a-quote: linear-gradient(42deg, #6a94ed 0%, #a9bef5 100%);
+  --main-text--color: #111111;
+  --pr-featurecard-color: #666666;
+  --blueBlack_color: #373a5b;
+  --body-color: #fff;
+
+  /*========== Font and typography ==========*/
+  --title-font-family: 'Great Vibes', cursive;
+  --sub-font-family: 'Cormorant Garamond', serif;
+  --big-sub-title-font-family: 'Ubuntu', sans-serif;
+  --body-font: 'Poppins', sans-serif;
+
+  /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+  --big-font-size: 50px;
+  --title-font-size: 80px;
+  --p-font-size: 16px;
+  --btn-font-size: 14px;
+
+  /*========== Font weight ==========*/
+  --main-font-weight: 700;
+}
+
+/* Font size for large devices */
+@media (max-width: 768px) {
+  :root {
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+    --big-font-size: 30px;
+    --title-font-size: 50px;
+    --p-font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --big-font-size: 30px;
+  }
+}
+/*==================== BASE ====================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  font-family: sans-serif;
+  line-height: 1.15;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+  position: relative;
+  /* line-height: 1.625; */
+}
+
+a {
+  text-decoration: none;
+  color: #111111;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/*==================== Navbar ====================*/
+
+header {
+  position: absolute;
+  top: 0;
+}
+
+.Navbar {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 90px;
+  z-index: 100;
+  background-color: #fff;
+  overflow-y: hidden;
+  box-shadow: 2px 1px 15px rgb(59, 58, 58);
+}
+
+.Navbar,
+.links,
+.links ul,
+.contact ul {
+  display: flex;
+}
+
+.logo {
+  position: absolute;
+  left: 50px;
+  top: 20px;
+}
+
+.logo img {
+  width: 100px;
+  height: 70px;
+  margin-left: 50px;
+}
+
+.links ul li,
+.contact ul li {
+  list-style: none;
+}
+
+.links li a {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: black;
+  margin: 0 20px;
+}
+
+.contact ul li {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  margin: 0 0px;
+}
+
+.links {
+  margin-top: 20px;
+  position: absolute;
+  right: 50px;
+  top: 20px;
+}
+
+.links ul li a {
+  transition: all 0.35s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  padding-bottom: 5px;
+  padding: 50px 10px;
+}
+
+.links .active {
+  color: #fff;
+}
+
+.links .active,
+.links ul li a:hover {
+  background-color: rgb(36, 34, 34);
+  color: #fff;
+}
+
+.contact ul li a:hover {
+  border-bottom: none;
+  color: #f4a01b;
+  background-color: #ffff;
+}
+
+/* ====================Menu for Responsive========================= */
+.menu-mob {
+  color: #111;
+  font-size: 30px;
+  margin-top: 0;
+  display: none;
+  cursor: pointer;
+  transition: all 0.35s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+}
+
+.menu-mob:hover {
+  color: #f4a01b;
+}
+
+/*==================== mob-menu ====================*/
+
+.hid-2 {
+  display: none;
+}
+
+.mob-links {
+  margin-top: 50px;
+  position: relative;
+}
+
+.mob-menu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -15px;
+  transition: all 0.7s;
+  height: 110vh;
+  z-index: 10002;
+  position: fixed;
+  width: 400px;
+  overflow-y: scroll;
+  background-color: #242323;
+  padding: 50px 50px;
+  box-shadow: 0px 3px 5px rgb(100 100 100 / 19%);
+}
+
+.mob-menu .close-menu {
+  color: var(--first-color);
+  cursor: pointer;
+  font-size: 35px;
+  border: none;
+  background: none;
+}
+.mob-menu img {
+  margin: 0 35%;
+}
+
+.mob-links li {
+  list-style: none;
+  margin: 10px 0;
+  width: 100%;
+  border-bottom: solid rgba(0, 0, 0, 0.1);
+}
+
+.mob-links a {
+  color: #ffff;
+  font-weight: var(--main-font-weight);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.mob-links i {
+  position: relative;
+  position: absolute;
+  right: 20px;
+}
+
+.mob-links i:hover a {
+  color: var(--main-color);
+}
+
+.mob-menu .menu-contact {
+  margin-bottom: 30px;
+}
+
+.overlay-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 860%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* ======================End Navebar================================ */
+
+/*==================== Intro-Services ====================*/
+.intro-services {
+  background-image: url(../image/services.jpg);
+  background-size: cover;
+  padding: 200px 0 270px;
+  position: relative;
+  top: 0px;
+  z-index: 1;
+  margin-bottom: 100px;
+}
+
+.intro-services::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(60deg, #000000 0%, #485563 100%);
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.intro-services-content {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.imgtext-title {
+  color: #fff;
+  font-size: 106px;
+  top: 25%;
+  left: 50%;
+  font-family: var(--sub-font-family);
+  line-height: 100px;
+  font-weight: 700;
+}
+
+.imgtext-pr {
+  color: #fff;
+  font-size: 20px;
+  line-height: 24px;
+  top: 45%;
+  left: 50%;
+}
+
+.service-text {
+  padding-right: 40px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 62px;
+  font-family: var(--title-font-family);
+  color: var(--first-color);
+  margin-top: 100px;
+}
+
+.sub-title {
+  font-weight: 700;
+  color: #4b4b4b;
+  font-size: 45px;
+  line-height: 55px;
+  text-transform: uppercase;
+  font-family: var(--sub-font-family);
+}
+
+.pr-1 {
+  font-size: 16px;
+  line-height: 24px;
+  color: #464646;
+}
+
+.pr-2 {
+  font-size: 14px;
+  line-height: 24px;
+  color: #898989;
+}
+
+.services-img {
+  width: 100%;
+  height: 450px;
+}
+
+.services-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.our-services {
+  margin: 50px 0;
+}
+
+.content .row {
+  margin: 150px 0;
+}
+
+/*==================== Media Queri ====================*/
+
+@media (max-width: 990px) {
+  /* ============Menu for Responsive============ */
+  .links ul,
+  .contact {
+    display: none;
+  }
+  .menu-mob {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: -20px;
+  }
+
+  .logo {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  }
+
+  .Navbar {
+    height: 90px;
+  }
+}
+
+@media (max-width: 770px) {
+  .imgtext-title {
+    font-size: 50px;
+  }
+
+  .title-3 {
+    margin-top: 0;
+  }
+
+  .intro-services {
+    margin-bottom: 0px;
+  }
+
+  .content .row {
+    margin: 50px 0;
+  }
+}
+
+@media (max-width: 420px) {
+  /* ==========Menu for Responsive======= */
+  .Navbar {
+    height: 70px;
+    background-color: #ffff;
+  }
+
+  .menu-mob {
+    right: -10px;
+    top: -20px;
+    font-size: 20px;
+  }
+
+  .logo {
+    left: -10px;
+  }
+
+  .logo img {
+    width: 90px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 281px) {
+  /* ==========Menu for Responsive========== */
+  .Navbar {
+    height: 60px;
+  }
+
+  .menu {
+    font-size: 17px;
+  }
+
+  .logo img {
+    width: 70px;
+    height: 35px;
+  }
+}
